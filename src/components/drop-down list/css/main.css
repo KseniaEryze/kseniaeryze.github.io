@@ -1,0 +1,39 @@
+.dropdown-container {
+    position: relative; /* Для абсолютного позиционирования списка */
+    margin-right: 25px;
+  }
+  
+  .dropdown-button {
+    border: none;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Выравнивание текста и стрелки по вертикали */
+  }
+  
+  .dropdown-arrow {
+    margin-left: 10px; /* Отступ от текста */
+  }
+  
+  .dropdown-options {
+    position: absolute;
+    top: 100%; /* Снизу от кнопки */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0;
+    list-style: none;
+    width: 150px; /* Ширина списка */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+  }
+  
+  .dropdown-options li {
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .dropdown-options li:hover {
+    background-color: #eee;
+  }

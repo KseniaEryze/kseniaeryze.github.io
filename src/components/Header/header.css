@@ -1,0 +1,25 @@
+.logo{
+    background-color: var(--color-primary);
+    padding: 17.5px 23.5px;
+    border-radius: 10px;
+    color: white;
+    margin-right: 65px;
+}
+
+.wrapper_main,.wrapper_main-menu,ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.wrapper_main{
+    margin: 50px 0;
+}
+
+.wrapper_main-menu li:not(:last-child){
+    margin-right: 15px;
+    font-size: 0.5em;    
+}
+
+

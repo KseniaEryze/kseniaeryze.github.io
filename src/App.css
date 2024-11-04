@@ -1,38 +1,69 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --color-primary: #DB3186;
+  
+  --color-blackButton: #383838;
+}
+.fields{
+  padding: 0 240px;
+}
+body{
+  font-family: "Open Sans", sans-serif;
+  width-max: 1920px;
+}
+
+a,h4,p{
+  font-size: 17px;
+  
+}
+h1,h2,h3,h4,h5{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+  font-size: 30px;
+  font-weight: 700;
+}
+h2{
+  padding: 14px;
+  margin: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button{
+  border-radius: 10px;
+  border: 1px solid #A4A6B2;
+  padding: 16px 18px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.blackButton{
+  background-color: var(--color-blackButton);
+  padding: 29px 33px;
+  border-radius: 50px;
   color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+input{
+  position: static  !important;
+  padding-bottom: 10px;
+  padding-top: 15px;
+
+  background-color: white;
+  color: inherit;
+  outline: none;
+  font-size: 17px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+label{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+@media (min-width: 992px){
+
 }

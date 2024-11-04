@@ -1,0 +1,35 @@
+.main-block{
+    height: 664px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2F2E2E;
+    color: white;
+}
+.wrapper_main-block p{
+   text-align: center;
+}
+.block_registraion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 51px;
+}
+.block_registraion-text{
+    margin: 18px 65px;
+}
+.block_button1{
+    padding: 20px 70px;
+    border-radius: 50px;
+    color: black;
+    background-color: white;
+}
+
+.block_button2{
+    padding: 20px 70px; 
+    border-radius: 50px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.438);
+}
+
