@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './header.css'
 import DropDown from '../drop-down list/DropDown'
 
 function Header() {
-  return (
-    <div className='wrapper_main fields'>
-   
+    const [menuActive, setMenuActive] = useState(false);
 
-    <nav className='wrapper_main-menu'> 
-    <a className='logo'>Logo</a>
+    const handleMenuClick = () => {
+      setMenuActive(!menuActive);
+    };
+    const handleMenuClouseClick = () => {
+        setMenuActive('');
+      };
+  return (
+    <div className='wrapper_main fields' >
+   
+      <div className='wrapper_nav'>
+        <a className='logo'>Logo</a>
         <DropDown></DropDown>
-        <ul>
+      <nav className='wrapper_main-menu' onClick={handleMenuClick}>  
+        <div 
+          className={`burger-menu ${menuActive ? 'active' : ''}`} 
+          onClick={handleMenuClick}>
+          <div className='bar'></div>
+          <div className='bar'></div>
+          <div className='bar'></div>
+        </div>
+        <ul className={` ${menuActive ? 'active' : ''}`}>
             <li>
                 <Link to="/main">Главная</Link>
             </li>
@@ -29,12 +44,14 @@ function Header() {
             </li>
 
         </ul>
-    </nav>
-    <div>
-      <Link className='button' to = '/'>Вход для мастеров</Link>
-      <Link className='button' to = '/register'>Вход для клиентов</Link>
-    </div>  
-    </div>
+        
+        </nav>
+      </div> 
+      <div>
+      <Link className='button' to = '/registerMaster'>Вход для мастеров</Link>
+      <Link className='button' to = '/registerUser'>Вход для клиентов</Link>
+  </div>  
+</div>
   )
 }
 
