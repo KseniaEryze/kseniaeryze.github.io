@@ -4,6 +4,10 @@ import './header.css'
 import DropDown from '../drop-down list/DropDown'
 
 function Header() {
+  const roleAuth = {
+    master: "мастер",
+    client: "клиент"
+};
     const [menuActive, setMenuActive] = useState(false);
 
     const handleMenuClick = () => {
@@ -48,9 +52,9 @@ function Header() {
         </nav>
       </div> 
       <div>
-      <Link className='button' to = '/registerMaster'>Вход для мастеров</Link>
-      <Link className='button' to = '/registerUser'>Вход для клиентов</Link>
-  </div>  
+        <Link className='button' to={`/registerUser?role=${roleAuth.master}`}>Вход для мастеров</Link>
+        <Link className='button' to={`/registerUser?role=${roleAuth.client}`}>Вход для клиентов</Link>
+      </div>  
 </div>
   )
 }
