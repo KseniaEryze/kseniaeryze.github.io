@@ -64,7 +64,7 @@ function RegisterPage() {
       <div className="wrapper-authorization_block">
         <h1>Регистрация для {role}а</h1>
         <p>
-          Уже есть Личный Профиль?  <Link to={`/loginUser?role=${role}`}>Войти</Link>
+          Уже есть Личный Профиль?  <Link to={`/login?role=${role}`}>Войти</Link>
          
         </p>
         <form onSubmit={handleSubmit}>

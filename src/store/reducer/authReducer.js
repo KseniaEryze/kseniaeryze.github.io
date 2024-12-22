@@ -1,21 +1,33 @@
-import { SET_AUTHENTICATED, SET_UNAUTHENTICATED } from '../action/userAction';
+import { SET_AUTHENTICATED, SET_UNAUTHENTICATED, LOGIN } from '../action/userAction';
 
 const initialState = {
     isAuthenticated: false,
     user: null,
-  };
-  
-  const authReducer = (state = initialState, action) => {
+};
+
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_AUTHENTICATED:
             return {
                 ...state,
-                isAuthenticated: true
+                isAuthenticated: true,
             };
         case SET_UNAUTHENTICATED:
             return {
                 ...state,
-                isAuthenticated: false
+                isAuthenticated: false,
+            };
+        case LOGIN:
+            return {
+                ...state,
+                isAuthenticated: true,
+                user: action.payload,
+            };
+        case 'LOGOUT':
+            return {
+                ...state,
+                isAuthenticated: false,
+                user: null,
             };
         default:
             return state;
