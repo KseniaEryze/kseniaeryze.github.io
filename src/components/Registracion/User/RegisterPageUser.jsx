@@ -23,20 +23,35 @@ function RegisterPage() {
 
     if (!userData.login) {
       errors = 'Имя обязательно.';
-    } else if (!userData.password) {
+    } else if (userData.login.length < 8) {
+      errors = 'Логин должен быть не менее 8 символов.';
+    }
+
+    if (!userData.password) {
       errors = 'Пароль обязателен.';
-    } else if (userData.password.length < 6) {
-       errors = 'Пароль должен быть не менее 6 символов.';
-    }else if (userData.password.length < 3) {
-      errors = 'Логин должен быть не менее 6 символов.';
-   }
+    } else if (userData.password.length < 8) {
+      errors = 'Пароль должен быть не менее 8 символов.';
+    } else {
+      const hasUpperCase = /[A-Z]/.test(userData.password);
+      const hasLowerCase = /[a-z]/.test(userData.password);
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(userData.password);
+
+      if (!hasUpperCase) {
+        errors = 'Пароль должен содержать хотя бы одну заглавную букву.';
+      } else if (!hasLowerCase) {
+        errors = 'Пароль должен содержать хотя бы одну строчную букву.';
+      } else if (!hasSpecialChar) {
+        errors = 'Пароль должен содержать хотя бы один специальный символ (!@#$%^&*(),.?":{}|<>)';
+      }
+    }
+
     return errors;
   };
 
   const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUserData(prev => ({...prev, [name]: value}))
-        setError('')
+    const { name, value } = e.target;
+    setUserData(prev => ({ ...prev, [name]: value }));
+    setError('');
   };
 
   const handleSubmit = async (e) => {
@@ -44,17 +59,17 @@ function RegisterPage() {
 
     const errors = validateRegistrationForm(userData);
 
-     if(errors) {
-        setError(errors)
-        return
-     }
+    if (errors) {
+      setError(errors);
+      return;
+    }
 
     try {
       await dispatch(login(userData)); // Отправка действия
       navigate('/'); // Перенаправление на главную страницу
     } catch (err) {
       console.error('Ошибка регистрации:', err);
-      setError('Ошибка регистрации, попробуйте еще раз')
+      setError('Ошибка регистрации, попробуйте еще раз');
       // Можно добавить обработку ошибок, например, отобразить сообщение об ошибке
     }
   };
@@ -64,8 +79,7 @@ function RegisterPage() {
       <div className="wrapper-authorization_block">
         <h1>Регистрация для {role}а</h1>
         <p>
-          Уже есть Личный Профиль?  <Link to={`/login?role=${role}`}>Войти</Link>
-         
+          Уже есть Личный Профиль? <Link to={`/login?role=${role}`}>Войти</Link>
         </p>
         <form onSubmit={handleSubmit}>
           <div className="wrapper-form">

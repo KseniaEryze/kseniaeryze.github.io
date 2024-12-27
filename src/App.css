@@ -13,7 +13,7 @@ body{
   width-max: 1920px;
 }
 
-a,h4,p{
+a, h4, p{
   font-size: 17px;
   
 }
@@ -26,6 +26,8 @@ h1{
   font-weight: 700;
 }
 h2{
+  font-size: 27px;
+  font-weight: 500;
   padding: 14px;
   margin: 50px;
 }

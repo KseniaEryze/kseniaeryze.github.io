@@ -1,65 +1,198 @@
 .master-page {
     display: flex;
-  }
-  
-  .sidebar {
-      width: 250px;
-      background-color: #f0f0f0;
-      padding: 20px;
-      box-sizing: border-box;
-      height: 100vh;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  .master-info {
-      margin-bottom: 20px;
-      text-align: center;
-  }
-  .master-name {
-     font-weight: bold;
-     display: block;
-     margin-bottom: 10px;
-  }
-  
-  .sidebar-list {
-      list-style: none;
-      padding: 0;
-      /* Добавляем это */
-      display: flex; 
-      flex-direction: column; /* Располагаем элементы вертикально */
-  }
-  
-  .sidebar li {
-      margin-bottom: 10px;
-  }
-  
-  .sidebar a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: #333;
-      border-radius: 4px;
-  }
-  
-  .sidebar a:hover,
-  .sidebar .active {
-      background-color: #ddd;
-      color: #000;
-  }
-  
-  .content {
-      flex: 1;
-      padding: 20px;
-  }
-  
-  .header {
-      margin-bottom: 20px;
-  }
-  
-  .service-content {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-  }
+    background: #a2a2a21f;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.master-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.master-name {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    background-color: #ddd;
+    color: #000;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.service-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.user-info_wrapper {
+    display: flex;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center; /* Центрируем элементы по вертикали */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-photo-container {
+    margin-right: 20px; /* Отступ справа для разделения с остальными элементами */
+}
+
+.user-photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.user-details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.user-details-name h2, .user-details-name p {
+    margin: 10px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.user-details-name {
+    margin-bottom: 10px;
+}
+
+.user-details-name p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #00000067;
+}
+
+.user-additional-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.rating-feedback-block {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-right: 2px solid #00000046;
+    padding-right: 15px;
+    margin-right: 5px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.user-actions a {
+    margin-right: 10px;
+}
+
+.contact-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+.address-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для более привлекательного внешнего вида */
+}
+
+.address-info.horizontal, .address-info.vertical {
+    padding: 0px;
+    background-color: #fff;
+}
+
+.address-info.horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.address-info.horizontal h2, .address-info.vertical h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+.address-info.horizontal p {
+    margin: 0;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.address-info.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.address-info.vertical p {
+    margin: 0;
+}

@@ -61,8 +61,7 @@ function Header() {
                     </div>
                     {userMenuActive && (
                         <div className='user-dropdown'>
-                            <Link to="/profile">Профиль</Link>
-                            <Link to="/settings">Настройки</Link>
+                            <Link to="/dashboard"> Мой профиль</Link>
                             <button onClick={handleLogout}>Выйти</button>
                         </div>
                     )}
