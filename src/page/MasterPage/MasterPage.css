@@ -5,6 +5,7 @@ textarea{
     height: 250px;
     width: 100%;
 }
+
 .info-container_header{
     display: flex;
     justify-content: space-between;
@@ -241,4 +242,9 @@ textarea{
 
 .address-info.vertical p {
     margin: 0;
+}
+
+input:focus {
+    border-color: #8F3574; /* Меняем цвет рамки на синий при фокусе */
+    outline: none; /* Убираем стандартную обводку */
 }

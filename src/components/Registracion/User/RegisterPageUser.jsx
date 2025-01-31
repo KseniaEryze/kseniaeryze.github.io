@@ -21,10 +21,14 @@ function RegisterPage() {
   const validateRegistrationForm = (userData) => {
     let errors = '';
 
+    // Регулярное выражение для валидации email
+     const emailPattern = /^[^\s@]+@[^\s@]+\.(com|ru|org)$/i;
+
+
     if (!userData.login) {
-      errors = 'Имя обязательно.';
-    } else if (userData.login.length < 8) {
-      errors = 'Логин должен быть не менее 8 символов.';
+      errors = 'Email обязателен.';
+    } else if (!emailPattern.test(userData.login)) {
+      errors = 'Введите корректный email.';
     }
 
     if (!userData.password) {
@@ -87,7 +91,7 @@ function RegisterPage() {
               style={{ border: error ? '2px solid red' : '' }}
               name="login"
               onChange={handleChange}
-              placeholder="Email или Номер телефона"
+              placeholder="Email"
               autoComplete="new-login"
             />
             <input
