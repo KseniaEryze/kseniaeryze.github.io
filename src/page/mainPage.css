@@ -33,3 +33,152 @@
     background-color: rgba(255, 255, 255, 0.438);
 }
 
+.master-search h2 {
+    text-align: start;
+    margin: 40px 20px;
+    padding: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.filter-options{
+    display: flex;
+    justify-content: start;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    padding: 5px 10px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    
+}
+
+
+.book-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+   
+}
+.filter-options select, .filter-options button {
+    margin-right: 10px;
+    font-size: 14px;
+    border-right: 1px solid rgba(0, 0, 0, 0.452);
+}
+
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.statistic-item {
+    text-align: center;
+    flex: 1;
+}
+
+.statistic-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.statistic-info span {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.statistic-info p {
+    margin: 5px 0;
+}
+.master-list h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.master-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px  10px 10px 25px;
+    border-radius: 30px;
+}
+.additional_text{
+    color: #33333362;
+}
+.master-avatar {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.master-info {
+    flex-grow: 1;
+}
+.master-info h4{
+    font-weight: 600;
+    text-align: start;
+    font-size: 26px;
+}
+.master-info p{
+    text-align: left;
+    font-size: 18px;
+}
+.master-info_header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.master-description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.master-description p{
+    padding: 0;
+    margin: 0;
+}
+.master-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+   
+}
+
+
+.master-rating span {
+    margin-right: 20px;
+
+}
+
+.contact-button {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+.button-feedback{
+    background-color: #F4F5F8;
+    padding: 0px 20px;
+    height: 48px;
+    width: 182px;
+    border-radius: 14px;
+}
+.button-feedback img{
+    height: 25px;
+    padding-left: 10px;
+}
+.footer p {
+    text-align: center;
+    cursor: pointer;
+    color: #007bff;
+}

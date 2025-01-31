@@ -1,3 +1,14 @@
+textarea{
+    border: 1px solid rgba(0, 0, 0, 0.582);
+    border-radius: 20px;
+    padding: 20px;
+    height: 250px;
+    width: 100%;
+}
+.info-container_header{
+    display: flex;
+    justify-content: space-between;
+}
 .master-page {
     display: flex;
     background: #a2a2a21f;
@@ -152,7 +163,7 @@
     background-color: #0056b3;
 }
 
-.address-container {
+.info-container {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
@@ -160,6 +171,42 @@
     border-radius: 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для более привлекательного внешнего вида */
+}
+
+.education-item_edit{
+    display: flex;
+    width: 100%;
+}
+
+.education-item_edit input {
+    flex-grow: 1;
+    margin: 10px 5px; /* Отступ между полем ввода и кнопкой */
+}
+.edit-button{
+    display: flex;
+    justify-content: space-between;
+}
+.education-item_edit button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.education-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.education-item li img{
+    padding-right: 15px;
+}
+
+
+.info-container h2{
+    padding: 10px 0;
+    margin: 10px 0;
+    text-align: justify;
+    font-size: 22px;
 }
 
 .address-info.horizontal, .address-info.vertical {
@@ -181,10 +228,9 @@
 }
 
 .address-info.horizontal p {
-    margin: 0;
     color: #007bff;
     cursor: pointer;
-    text-decoration: underline;
+    padding: 0px 0px 0px 20px;
 }
 
 .address-info.vertical {

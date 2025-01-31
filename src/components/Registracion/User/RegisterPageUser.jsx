@@ -11,11 +11,11 @@ function RegisterPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Инициализируем начальные значения для userData
   const [userData, setUserData] = useState({
     login: '',
     password: '',
   });
+
   const [error, setError] = useState('');
 
   const validateRegistrationForm = (userData) => {
@@ -65,12 +65,11 @@ function RegisterPage() {
     }
 
     try {
-      await dispatch(login(userData)); // Отправка действия
-      navigate('/'); // Перенаправление на главную страницу
+      await dispatch(login(userData));
+      navigate('/');
     } catch (err) {
       console.error('Ошибка регистрации:', err);
       setError('Ошибка регистрации, попробуйте еще раз');
-      // Можно добавить обработку ошибок, например, отобразить сообщение об ошибке
     }
   };
 
@@ -87,18 +86,18 @@ function RegisterPage() {
               className="wrapper-form_input"
               style={{ border: error ? '2px solid red' : '' }}
               name="login"
-              value={userData.login}
               onChange={handleChange}
               placeholder="Email или Номер телефона"
+              autoComplete="new-login"
             />
             <input
               className="wrapper-form_input"
               style={{ border: error ? '2px solid red' : '' }}
               type="password"
               name="password"
-              value={userData.password}
               onChange={handleChange}
               placeholder="Пароль"
+              autoComplete="new-password"
             />
             {error && <p className='error-message'>{error}</p>}
             <Link to="/">Забыли пароль?</Link>

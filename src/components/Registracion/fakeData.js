@@ -3,15 +3,15 @@ import { login } from "../../store/action/userAction";
 const fakeUsers = [
     {
         id: 1,
-        login: 'admin',
-        password: 'admin',
-        role: 'admin',
+        login: 'master',
+        password: 'master',
+        role: 'master',
     },
      {
         id: 2,
-        login: 'admin2',
-        password: 'admin2',
-        role: 'admin',
+        login: 'master2',
+        password: 'master2',
+        role: 'master',
     },
     {
         id: 2,

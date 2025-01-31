@@ -10,6 +10,7 @@ import { setUnauthenticated } from './store/action/userAction';
 import MasterMain from './page/MasterPage/MasterMain';
 import ProtectedRoute from './components/ProtectedRoute';
 
+
 function App() {
 const dispatch = useDispatch();
 const handleLogout = () => {
@@ -26,8 +27,10 @@ const handleLogout = () => {
               <Route path='/main' element={<Main></Main>}/>
               <Route path='/login' element={<LoginPageUser/>}/>
               <Route path="/register" element={<RegisterPage />} />
+
               <Route element={<ProtectedRoute />}>
                         <Route path="/dashboard" element={<MasterMain />} />
+                        
               </Route>     
 
         </Routes>

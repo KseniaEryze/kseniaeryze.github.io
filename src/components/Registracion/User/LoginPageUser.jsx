@@ -21,7 +21,7 @@ function LoginPageUser() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            if (userRole === 'admin') {
+            if (userRole === 'master') {
                 navigate('/dashboard');
             } else {
                 navigate('/main');
@@ -61,6 +61,7 @@ function LoginPageUser() {
                             value={login}
                             onChange={(e) => setLogin(e.target.value)}
                             placeholder="Email или Номер телефона"
+                            autoComplete="new-login"
                         />
                         <input
                             className='wrapper-form_input'
@@ -69,6 +70,7 @@ function LoginPageUser() {
                             value={password}
                             onChange={(e) => setPass(e.target.value)}
                             placeholder="Пароль"
+                            autoComplete="new-password"
                         />
                         {error && <p className="error">{error}</p>}
                         <Link to='/'>Забыли пароль?</Link>
