@@ -22,9 +22,9 @@ function RegisterPage() {
     let errors = '';
 
     if (!userData.login) {
-      errors = 'Имя обязательно.';
+      errors = 'Введите email';
     } else if (userData.login.length < 8) {
-      errors = 'Логин должен быть не менее 8 символов.';
+      errors = 'Email должен быть не менее 8 символов.';
     }
 
     if (!userData.password) {
@@ -32,8 +32,8 @@ function RegisterPage() {
     } else if (userData.password.length < 8) {
       errors = 'Пароль должен быть не менее 8 символов.';
     } else {
-      const hasUpperCase = /[A-Z]/.test(userData.password);
-      const hasLowerCase = /[a-z]/.test(userData.password);
+      const hasUpperCase = /[A-ZА-Я]/.test(userData.password);
+      const hasLowerCase = /[a-zа-я]/.test(userData.password);
       const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(userData.password);
 
       if (!hasUpperCase) {

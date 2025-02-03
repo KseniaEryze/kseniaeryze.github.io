@@ -65,7 +65,7 @@ function LoginPageUser() {
                         />
                         <input
                             className='wrapper-form_input'
-                            style={{ border: error ? '2px solid red' : '#F04438' }}
+                            style={{ border: error ? '2px solid red' : '' }}
                             type="password"
                             value={password}
                             onChange={(e) => setPass(e.target.value)}
