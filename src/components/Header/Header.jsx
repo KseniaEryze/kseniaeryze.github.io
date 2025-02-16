@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './header.css';
 import DropDown from '../drop-down list/DropDown';
 import { logout, setUnauthenticated } from '../../store/action/userAction';
-  
+import { FaUser } from 'react-icons/fa'; // Импортируем иконку пользователя из react-icons
+
 function Header() {
     const roleAuth = {
         master: "мастер",
@@ -13,14 +14,13 @@ function Header() {
 
     const [menuActive, setMenuActive] = useState(false);
     const [userMenuActive, setUserMenuActive] = useState(false);
-  
+    const [userMenuOpenedByClick, setUserMenuOpenedByClick] = useState(false);
+    const dispatch = useDispatch();
 
-    const dispatch = useDispatch();  
-    
     const handleLogout = () => {
         dispatch(setUnauthenticated());
     };
-     
+
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const user = useSelector((state) => state.auth.user);
 
@@ -28,10 +28,36 @@ function Header() {
         setMenuActive(!menuActive);
     };
 
-    const handleUserMenuClick = () => {
-        setUserMenuActive(!userMenuActive);
+    const handleUserMenuEnter = () => {
+        if (!userMenuOpenedByClick) {
+            setUserMenuActive(true);
+        }
     };
 
+    const handleUserMenuLeave = () => {
+        if (!userMenuOpenedByClick) {
+            setUserMenuActive(false);
+        }
+    };
+
+    const handleUserMenuClick = () => {
+        setUserMenuActive(!userMenuActive);
+        setUserMenuOpenedByClick(true);
+    };
+
+    const handleDocumentClick = (e) => {
+        if (userMenuActive && !e.target.closest('.user-menu')) {
+            setUserMenuActive(false);
+            setUserMenuOpenedByClick(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleDocumentClick);
+        return () => {
+            document.removeEventListener('click', handleDocumentClick);
+        };
+    }, [userMenuActive]);
 
     return (
         <div className='wrapper_main fields'>
@@ -55,9 +81,9 @@ function Header() {
                 </nav>
             </div>
             {isAuthenticated ? (
-                <div className='user-menu' onMouseEnter={handleUserMenuClick} onMouseLeave={handleUserMenuClick}>
+                <div className='user-menu' onMouseEnter={handleUserMenuEnter} onMouseLeave={handleUserMenuLeave}>
                     <div className='user-icon' onClick={handleUserMenuClick}>
-                      
+                        <FaUser /> {/* Иконка пользователя */}
                     </div>
                     {userMenuActive && (
                         <div className='user-dropdown'>
@@ -67,7 +93,7 @@ function Header() {
                     )}
                 </div>
             ) : (
-                <div>
+                <div className='authorization-button'>
                     <Link className='button' to={`/register?role=${roleAuth.master}`}>Вход для мастеров</Link>
                     <Link className='button' to={`/register?role=${roleAuth.client}`}>Вход для клиентов</Link>
                 </div>

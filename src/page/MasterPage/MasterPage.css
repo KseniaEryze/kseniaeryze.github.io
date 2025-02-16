@@ -1,3 +1,4 @@
+
 textarea{
     border: 1px solid rgba(0, 0, 0, 0.582);
     border-radius: 20px;
@@ -58,8 +59,11 @@ textarea{
 
 .sidebar a:hover,
 .sidebar .active {
-    background-color: #ddd;
-    color: #000;
+    background-color:var(--color-primary);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: #ffffff;
 }
 
 .content {
@@ -151,7 +155,7 @@ textarea{
 }
 
 .contact-button {
-    background-color: #007bff;
+    background-color: var(--color-primary);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -160,7 +164,7 @@ textarea{
 }
 
 .contact-button:hover {
-    background-color: #0056b3;
+    background-color: var(--color-primary);
 }
 
 .info-container {
@@ -228,7 +232,7 @@ textarea{
 }
 
 .address-info.horizontal p {
-    color: #007bff;
+    color: var(--color-primary);
     cursor: pointer;
     padding: 0px 0px 0px 20px;
 }

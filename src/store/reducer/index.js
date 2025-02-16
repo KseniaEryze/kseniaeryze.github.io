@@ -7,7 +7,7 @@ import portfolioReducer from './portfolioReducer';
    const rootReducer = combineReducers({
         portfolio: portfolioReducer,
         documents: documentReducer,
-        clients: clientReducer, 
+        clients: clientReducer,
         auth: authReducer,
       
        

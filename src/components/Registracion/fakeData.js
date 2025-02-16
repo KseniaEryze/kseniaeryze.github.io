@@ -9,15 +9,15 @@ const fakeUsers = [
     },
      {
         id: 2,
-        login: 'master2',
-        password: 'master2',
-        role: 'master',
+        login: 'master',
+        password: 'master',
+        role: 'client',
     },
     {
         id: 2,
-        login: 'teacher',
-        password: 'teacher',
-        role: 'teacher',
+        login: 'client',
+        password: 'client',
+        role: 'client',
     },
     {
         id: 3,

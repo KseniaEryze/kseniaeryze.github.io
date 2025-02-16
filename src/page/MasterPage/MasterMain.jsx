@@ -11,13 +11,14 @@ import check_mark2 from '../../assets/SVG (2).png'
 import { FaEdit, FaSave, FaPlus, FaMinus } from 'react-icons/fa'; // Импортируем иконки из библиотеки react-icons
 import PortfolioSlider from '../../components/PortfolioSlider/PortfolioSlider';
 import { setClients, addClientMessage } from '../../store/action/clientAction'; // Импортируем действия для клиентов
+import MessagingComponent from '../../components/MessagingComponent/MessagingComponent';
 
 
 function MasterPage() {
     const userRole = useSelector((state) => state.auth.user?.role); 
     const isMaster = userRole === 'master'; 
     const dispatch = useDispatch();
-    const clients = useSelector((state) => state.clients.clients);
+    const clients = useSelector((state) => state.clients);
 
 
     const [selectedService, setSelectedService] = useState('Мой профиль');
@@ -204,28 +205,7 @@ function MasterPage() {
                     return (
                         <div className="info-container">
                             <h2>Сообщения</h2>
-                            <div className="client-list">
-                                {clients.map((client) => (
-                                    <div key={client.id} className="client-item">
-                                        <h3>{client.name}</h3>
-                                        <div className="messages">
-                                            {client.messages.map((message, index) => (
-                                                <p key={index}>{message}</p>
-                                            ))}
-                                        </div>
-                                        <input
-                                            type="text"
-                                            placeholder="Отправить сообщение"
-                                            onKeyPress={(e) => {
-                                                if (e.key === 'Enter') {
-                                                    handleSendMessage(client.id, e.target.value);
-                                                    e.target.value = '';
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
+                            <MessagingComponent></MessagingComponent>
                         </div>
                     );
                 case 'Адрес':

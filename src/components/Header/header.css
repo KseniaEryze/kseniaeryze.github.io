@@ -5,6 +5,11 @@
     color: white;
     margin-right: 65px;
 }
+.authorization-button a{
+  border-color: rgba(255, 255, 255, 0.699);
+  margin: 5px;
+}
+ 
 
 .wrapper_main,.wrapper_main-menu,ul{
     display: flex;
@@ -18,12 +23,18 @@
     align-items: center;
 }
 .wrapper_main{
-    margin: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #AE6F9B;
+    color: white;
 }
-
+.wrapper_main a{
+  color: white;
+}
 .wrapper_main-menu li:not(:last-child){
     margin-right: 15px;
     font-size: 0.5em;    
+   
 }
 
 .user-menu {
@@ -33,19 +44,22 @@
 
 .user-icon {
   cursor: pointer;
-  padding: 10px;
+  padding: 7px 10px;
   border-radius: 50%;
   background-color: #f0f0f0;
 }
 
+
 .user-dropdown {
   display: none;
   position: absolute;
-  top: 25px;
+  top: 40px;
   right: 0;
-  background-color: white;
+  background-color: #AE6F9B;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  padding: 15px 10px;
+  border-radius: 20px;
 }
 
 .user-menu:hover .user-dropdown {
@@ -56,24 +70,23 @@
   display: block;
   padding: 12px 16px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
-.user-dropdown a:hover {
-  background-color: #f1f1f1;
+.user-dropdown a:hover , .user-dropdown button:hover {
+  background-color: #f1f1f162;
+  border-radius: 20px ;
 }
 
 .user-dropdown button {
   background: none;
   border: none;
+  width: 100%;
   padding: 12px 16px;
   cursor: pointer;
-  color: black;
+  color:white;
 }
 
-.user-dropdown button:hover {
-  background-color: #f1f1f1;
-}
 
 @media (max-width: 1680px) {
     .wrapper_main-menu ul {
@@ -94,13 +107,14 @@
     .wrapper_main-menu .burger-menu {
       display: block;
       cursor: pointer;
+
     }
   
     .wrapper_main-menu .burger-menu .bar {
       display: block;
       width: 30px;
       height: 3px;
-      background-color: #333;
+      background-color: #ffffff;
       margin: 5px auto;
       transition: transform 0.3s ease-in-out;
     }
@@ -120,7 +134,7 @@
     .wrapper_main-menu ul.active {
       display: flex;
       flex-direction: column;
-      background-color: #fff;
+      background-color:#AE6F9B;
       padding: 15%;
       z-index: 10;
      

@@ -5,7 +5,7 @@
   
   .dropdown-button {
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     padding: 10px;
     cursor: pointer;
     display: flex;
@@ -20,8 +20,7 @@
     position: absolute;
     top: 100%; /* Снизу от кнопки */
     left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #ffffff23;
     padding: 0;
     list-style: none;
     width: 150px; /* Ширина списка */
@@ -35,5 +34,5 @@
   }
   
   .dropdown-options li:hover {
-    background-color: #eee;
+    background-color: #eeeeee00;
   }
