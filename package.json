@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://nalikseniaeryze.github.io/nail",
+  "homepage": "https://kseniaeryze.github.io/Nails",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
