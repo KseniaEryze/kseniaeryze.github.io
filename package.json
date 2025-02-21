@@ -1,6 +1,9 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "http://kseniaeryze.github.io/nails",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
@@ -51,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "ajv": "^7.2.4"
+    "ajv": "^7.2.4",
+    "gh-pages": "^6.3.0"
   }
 }
